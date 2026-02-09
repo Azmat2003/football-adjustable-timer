@@ -1,0 +1,91 @@
+.timer-container {
+  height: 100vh;
+  background: #0b0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", monospace;
+}
+
+.timer-box {
+  background: #111827;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.time-display {
+  font-size: 64px;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.controls button {
+  background: #1f2933;
+  color: #e5e7eb;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background: #374151;
+}
+
+.controls button.primary {
+  background: #2563eb;
+}
+
+.controls button.primary:hover {
+  background: #1d4ed8;
+}
+
+.adjust-wrapper {
+  position: relative;
+}
+
+.adjust-panel {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #020617;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  z-index: 10;
+}
+
+.adjust-panel input {
+  width: 80px;
+  padding: 8px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e5e7eb;
+  outline: none;
+}
+
+.adjust-panel input::placeholder {
+  color: #64748b;
+}
+
+.adjust-panel button {
+  padding: 8px 14px;
+}
+
