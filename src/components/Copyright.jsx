@@ -7,7 +7,7 @@ const Copyright = () => {
     <footer className="copyright">
       © {new Date().getFullYear()} | Azmat Matin Shadab |
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/Azmat2003"
         target="_blank"
         rel="noopener noreferrer"
         className="github-link"
