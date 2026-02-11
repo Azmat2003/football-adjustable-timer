@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/footballTimer.css";
+import Copyright from "./Copyright";
 
 function FootballTimer() {
     const [totalSeconds, setTotalSeconds] = useState(0);
@@ -33,75 +34,79 @@ function FootballTimer() {
 
 
     return (
-        <div className="timer-container">
-            <div className="timer-box">
-                <div className="time-display">
-                    {minutes} : {seconds}
-                </div>
-
-                <div className="controls">
-                    <button
-                        className="primary"
-                        onClick={() => setIsRunning((prev) => !prev)}
-                    >
-                        {isRunning ? "Pause" : "Start"}
-                    </button>
-
-                    <button onClick={handleReset}>Reset</button>
-
-                    <div className="adjust-wrapper">
-                        <button
-                            onClick={() => {
-                                setIsRunning(false);
-                                setShowAdjust((prev) => !prev);
-                            }}
-                        >
-                            Adjust
-                        </button>
-
-                        {showAdjust && (
-                            <div className="adjust-panel">
-                                <input
-                                    type="number"
-                                    min="0"
-                                    max="200"
-                                    placeholder="Minutes"
-                                    value={inputMin}
-                                    onChange={(e) => setInputMin(e.target.value)}
-                                />
-
-                                <input
-                                    type="number"
-                                    min="0"
-                                    max="59"
-                                    placeholder="Seconds"
-                                    value={inputSec}
-                                    onChange={(e) => setInputSec(e.target.value)}
-                                />
-
-                                <button
-                                    className="primary"
-                                    onClick={() => {
-                                        const min = Number(inputMin);
-                                        const sec = Number(inputSec);
-
-                                        if (min < 0 || min > 200 || sec < 0 || sec > 59) return;
-
-                                        setTotalSeconds(min * 60 + sec);
-                                        setShowAdjust(false);
-                                        setIsRunning(true);
-                                    }}
-                                >
-                                    Set
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-
-            </div>
+  <div className="page-wrapper">
+    <div className="timer-container">
+      <div className="timer-box">
+        <div className="time-display">
+          {minutes} : {seconds}
         </div>
-    );
+
+        <div className="controls">
+          <button
+            className="primary"
+            onClick={() => setIsRunning((prev) => !prev)}
+          >
+            {isRunning ? "Pause" : "Start"}
+          </button>
+
+          <button onClick={handleReset}>Reset</button>
+
+          <div className="adjust-wrapper">
+            <button
+              onClick={() => {
+                setIsRunning(false);
+                setShowAdjust((prev) => !prev);
+              }}
+            >
+              Adjust
+            </button>
+
+            {showAdjust && (
+              <div className="adjust-panel">
+                <input
+                  type="number"
+                  min="0"
+                  max="200"
+                  placeholder="Minutes"
+                  value={inputMin}
+                  onChange={(e) => setInputMin(e.target.value)}
+                />
+
+                <input
+                  type="number"
+                  min="0"
+                  max="59"
+                  placeholder="Seconds"
+                  value={inputSec}
+                  onChange={(e) => setInputSec(e.target.value)}
+                />
+
+                <button
+                  className="primary"
+                  onClick={() => {
+                    const min = Number(inputMin);
+                    const sec = Number(inputSec);
+
+                    if (min < 0 || min > 200 || sec < 0 || sec > 59) return;
+
+                    setTotalSeconds(min * 60 + sec);
+                    setShowAdjust(false);
+                    setIsRunning(true);
+                  }}
+                >
+                  Set
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <Copyright />
+  </div>
+);
+
 }
 
 export default FootballTimer;

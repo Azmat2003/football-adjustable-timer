@@ -1,0 +1,31 @@
+.copyright {
+  width: 100%;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #b3b3b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* space between text and github */
+  margin-bottom: 100px;
+  font-size: larger;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9b7bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.github-icon {
+  font-size: 16px;
+}
+
+.github-link:hover {
+  color: #ffffff;
+}
