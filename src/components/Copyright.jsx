@@ -5,7 +5,7 @@ import "../styles/copyright.css";
 const Copyright = () => {
   return (
     <footer className="copyright">
-      © {new Date().getFullYear()} | Azmat Matin Shadab |
+      © {new Date().getFullYear()} |
       <a
         href="https://github.com/Azmat2003"
         target="_blank"
